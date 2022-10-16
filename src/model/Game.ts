@@ -68,7 +68,8 @@ export default class Game {
                 result.push({ name: name, points: points });
             }
             if (value === 5) {
-                result.push({ name: "yahtzee", points: 50 });
+                name = "yahtzee"
+                result.push({ name: name, points: 50 });
             }
         });
 
@@ -99,24 +100,30 @@ export default class Game {
     }
 
     points = (computed: any) => {
+        // if (this.player.turn === 3) {
+        //     this.player.turn = 0;
+        //     this.player.round++;
+        // } else {
+        //     return false;
+        // }
+
         if (this.player.points[computed.name] === "" && computed.name !== "yahtzee") {
+
             this.player.points[computed.name] = computed.points;
             let equal_total: number = Number(this.player.points["equal_1"]) + Number(this.player.points["equal_2"]) + Number(this.player.points["equal_3"]) + Number(this.player.points["equal_4"]) + Number(this.player.points["equal_5"]) + Number(this.player.points["equal_6"])
+
             if (equal_total >= 63) {
-                console.log("BONUS", equal_total)
                 this.player.points["bonus"] = 35;
             }
-            if (this.player.turn === 3) {
-                this.player.turn = 0;
-                this.player.round++;
+            return true;
+        } else if (computed.name === "yahtzee") {
+            if (this.player.points["yahtzee"] === "") {
+                this.player.points["yahtzee"] = 50;
             } else {
-                return false;
+                this.player.points["yahtzee_bonus"] += 100;
             }
             return true;
-        } else if (computed.name === "yahtzee" && this.player.points[computed.name] !== "") {
-            this.player.points["yahtzee_bonus"] += 100;
         }
-
         return false;
     }
 
