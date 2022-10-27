@@ -1,6 +1,6 @@
 {
-  "short_name": "Yahtzee",
-  "name": "Yahtzee - Have fun with Yahtzee",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

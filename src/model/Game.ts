@@ -59,12 +59,12 @@ export default class Game {
             }
             if (value >= 3) {
                 name = "tris"
-                points = hand.reduce((a, b) => a + b, 0)
+                points = Number(key) * 3;
                 result.push({ name: name, points: points });
             }
             if (value >= 4) {
                 name = "poker"
-                points = hand.reduce((a, b) => a + b, 0)
+                points = Number(key) * 4;
                 result.push({ name: name, points: points });
             }
             if (value === 5) {

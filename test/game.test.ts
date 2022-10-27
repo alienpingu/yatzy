@@ -39,7 +39,9 @@ describe("compute", () => {
         expect(game.compute([2, 2, 2, 3, 5])).toStrictEqual([
             { name: "chance", points: 14 },
             { name: "equal_2", points: 6 },
-            { name: "tris", points: 14 },
+            {
+                name: "tris", points: 6
+            },
             { name: "equal_3", points: 3 },
             { name: "equal_5", points: 5 }
         ]);
@@ -67,7 +69,7 @@ describe("compute", () => {
             { name: "equal_1", points: 1 },
             { name: "equal_2", points: 2 },
             { name: "equal_5", points: 15 },
-            { name: "tris", points: 18 }
+            { name: "tris", points: 15 }
         ]);
     })
     it("dice equal with 6. eg. 6-3-2-6-1", () => {
@@ -105,7 +107,7 @@ describe("compute", () => {
         expect(game.compute([2, 2, 2, 4, 5])).toStrictEqual([
             { name: "chance", points: 15 },
             { name: "equal_2", points: 6 },
-            { name: "tris", points: 15 },
+            { name: "tris", points: 6 },
             { name: "equal_4", points: 4 },
             { name: "equal_5", points: 5 },
         ]);
@@ -114,7 +116,8 @@ describe("compute", () => {
         expect(game.compute([2, 2, 2, 2, 5])).toStrictEqual([
             { name: "chance", points: 13 },
             { name: "equal_2", points: 8 },
-            { name: "poker", points: 13 },
+            { name: "tris", points: 6 },
+            { name: "poker", points: 8 },
             { name: "equal_5", points: 5 }
         ]);
     })
@@ -122,7 +125,7 @@ describe("compute", () => {
         expect(game.compute([2, 2, 2, 5, 5])).toStrictEqual([
             { name: "chance", points: 16 },
             { name: "equal_2", points: 6 },
-            { name: "tris", points: 16 },
+            { name: "tris", points: 6 },
             { name: "equal_5", points: 10 },
             { name: "full", points: 25 }
         ]);
@@ -131,6 +134,8 @@ describe("compute", () => {
         expect(game.compute([2, 2, 2, 2, 2])).toStrictEqual([
             { name: "chance", points: 10 },
             { name: "equal_2", points: 10 },
+            { name: "tris", points: 6 },
+            { name: "poker", points: 8 },
             { name: "yahtzee", points: 50 }
         ]);
     })
