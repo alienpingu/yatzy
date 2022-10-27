@@ -1,6 +1,6 @@
 {
   "short_name": "Yatzy",
-  "name": "Yatzy Simulator",
+  "name": "Play Yatzy",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#dc3545",
+  "theme_color": "#000000",
   "background_color": "#ffffff"
 }
